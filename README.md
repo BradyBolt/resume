@@ -1,7 +1,7 @@
 # resume
-Latex Resume and dot graph for college courses.
+Latex resume and dot graph for college courses.
 
-Install Latex stuff:
+Install Latex things:
 ```
 sudo apt-get install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
 ```
@@ -18,5 +18,5 @@ To make directed graph of college courses (install `xdot` and `eog`):
 cd ./college_graph
 ./gen
 ```
-This is my college course graph:
+This is my college course graph, color-coded by semester:
 ![Image of Classes](./college_graph/gc.png)
