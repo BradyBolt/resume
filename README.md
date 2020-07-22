@@ -18,3 +18,5 @@ To make directed graph of college courses (install `xdot` and `eog`):
 cd ./college_graph
 ./gen
 ```
+This is my college course graph:
+![Image of Classes](./college_graph/gc.png)
