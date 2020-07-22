@@ -1,0 +1,297 @@
+/*
+Where we left off:
+- Fixed coding style (e.g. semicolons)
+- Finished the labels for the classes in the node section
+*/
+
+/*
+Notes on style:
+- Entries labeled 'red' indicate a commented out pre-req. relationship that is 'redundant'.
+  I.e. have: a -> b -> c and a -> c, so one removes: a -> c. I hope the graph becomes cleaner.
+	//MATH_1226 -> MATH_2214	red
+*/
+digraph G {
+	rankdir=LR;
+
+	//=====================================================================
+	//			Color-coded nodes by semester (start)
+	//=====================================================================
+
+	// Summer II 2017
+	node [style=filled,color=linen];
+	ENGE_1014;	// Engineering Success Seminar
+	ENGE_1215;	// Foundations of Engineering I
+	STS_2054;	// Engineering Cultures         
+
+	// Fall 2017
+	node [style=filled,color=yellowgreen];
+	CHEM_1035;	// Chemistry Lecture                  
+	CHEM_1045;      // Chemistry Lab
+	MATH_1226;      // Calculus of a Single Variable II
+	MATH_2114;      // Intro. Linear Algebra
+	ENGE_1216;      // Foundations of Engineering II
+	ENGE_2094;      // Create                           
+
+	// Spring 2018
+	node [style=filled,color=lightsalmon];
+	CS_1064;	// Intro. Python
+	CS_2114;        // Software Design and Data Structures
+	MATH_2204;      // Intro. Multivariable Calculus 
+	PHYS_2305;      // Foundations of Physics I
+	STAT_3005;      // Statistical Methods I               
+	
+	// Fall 2018
+	node [style=filled,color=lightcyan];
+	CMDA_3634;	// CS Foundations for CMDA
+	CS_2505;        // Intro. Comp. Org. I
+	MATH_2534;      // Discrete Math
+	STAT_3006;      // Statistical Methods II
+	CS_1944;        // CS First Year Seminar
+	CS_2984;	// SS: Competitive Problem Solving I
+
+	// Spring 2019
+	node [style=filled,color=wheat];
+	STAT_3104;	// Probability and Distributions
+	STAT_4705;      // Statistics for Engineers
+	MATH_3134;      // Applied Combinatorics
+	MATH_2214;      // Differential Equations
+	CS_2506;        // Intro. Comp. Org. II         
+	CS_3114;	// Data Structures and Algorithms
+	
+	// Fall 2019
+	node [style=filled,color=orchid];
+	COM_2004;	// Public Speaking
+	CS_3214;	// Systems
+	CMDA_3605;	// Math Modeling: Methods & Tools I
+	CMDA_3654;	// Intro. Data An. & Vis.
+	ART_1104;	// Language of Visual Arts
+
+	// Fall 2020
+	node [style=filled,color=lightskyblue];
+	CS_3304;	// Comparative Languages
+	CS_3604;	// Professionalism in Computing
+	CS_4104;	// Data and Algorithm Analysis
+	CMDA_3606;	// Math Modeling: Methods & Tools II
+	CMDA_4654;	// Int. Data An. & ML
+
+	// Spring 2021
+	node [style=filled,color=palevioletred];
+	ENGL_3814;   	// Creating User Documentation
+	CS_4944;	// Senior Seminar
+	STAT_4214;	// Methods of Regression Analysis
+	STAT_4504;	// Applied Multivariate Analysis
+	STAT_4534;	// Applied Time Series
+	STAT_4444;	// Applied Bayesian Statistics
+	
+	// Fall 2021
+	node [style=filled,color=orangered];
+	CS_4284;	// Systems & Networking Capstone
+	CMDA_4864;	// CMDA Capstone
+
+	node [style=unfilled,color=black];	// Reset colors for additional nodes
+
+	//=====================================================================
+	//			High-school credits
+	// 			Format: AP_<name>_sc<ap-score>
+	//=====================================================================
+
+	subgraph cluster0 {
+		color=blue;
+		label="Accepted AP Credits";
+
+		AP_langComp_sc5 -> ENGL_1105;
+		AP_langComp_sc5 -> ENGL_1106;
+		// Duplicate(s):
+		// AP_lit_sc4 -> ENGL_1105
+		// AP_eng_sc5 -> ENGL_1106
+		AP_calcAB_sc4 -> MATH_1225;
+		// Duplicate:
+		// AP_calcBC_sc4 -> MATH_1225
+		// Canceled: idiot move:
+		// AP_calcBC_sc4 -> MATH_1226
+		AP_coGo_sc5 -> PSCI_1024;
+		AP_cs_sc5 -> CS_1114;
+		
+		// Physics credits not applicable to ENGR degree:
+		// AP_ph1_sc3
+		// AP_ph2_sc3
+		// AP_phEM_sc3
+		// AP_phC_sc3
+		// Low score:
+		// AP_macro_sc2
+		AP_micro_sc4 -> ECON_2005;
+		AP_us_sc5 -> HIST_1115;
+		AP_us_sc5 -> HIST_1116;
+		AP_wh_sc5 -> HIST_1215;
+		AP_wh_sc5 -> HIST_1216;
+		AP_span_sc3 -> SPAN_2XXX;
+	}
+	
+	// AP credits and their post-reqs.
+	ENGL_1106 -> ENGL_3814;
+	MATH_1225 -> MATH_2114;
+	MATH_1225 -> STAT_3005;
+	MATH_1225 -> MATH_1226;
+	MATH_1225 -> PHYS_2305;
+	CS_1114 -> CS_2114;
+	CS_1114 -> CS_1944;
+	CS_1114 -> CS_2984;
+	CS_1114 -> MATH_2534;
+
+	//=====================================================================
+	//			Timeline of post-requisites
+	//=====================================================================
+	
+	// Summer II 2017
+	ENGE_1215 -> ENGE_1216;	// Foundations of Engineering I
+	ENGE_1014		// Engineering Success Seminar
+	// TODO: Confirm that this course was applied this way
+	STS_2054;		// Engineering Cultures         
+	//=====================================================================
+	// Fall 2017
+	CHEM_1035;		// Chemistry Lecture
+	CHEM_1045;		// Chemistry Lab
+	ENGE_1216;		// Foundations of Engineering II
+	ENGE_2094;		// Create
+	MATH_1226 -> MATH_2204;	// Calculus of a Single Variable II
+	MATH_1226 -> STAT_3104;
+	MATH_1226 -> MATH_3134;
+	//MATH_1226 -> MATH_2214	red
+	MATH_2114 -> MATH_2214;	// Intro. Linear Algebra
+	//MATH_2114 -> CMDA_3605	red
+
+	//=====================================================================
+	// Spring 2018
+	CS_1064	-> CMDA_3654;	// Intro. Python
+	CS_2114 -> CMDA_3634;	// Software Design and Data Structures
+	CS_2114 -> CS_2505;
+	CS_2114 -> CS_3114;
+	CS_2114 -> CS_3604;
+	MATH_2204 -> MATH_2214;	// Intro. Multivariable Calculus 
+	MATH_2204 -> CMDA_3654;
+	MATH_2204 -> STAT_4705;
+	MATH_2204 -> STAT_4444;
+	//MATH_2204 -> CMDA_3605	red
+	PHYS_2305;		// Foundations of Physics I
+	STAT_3005 -> STAT_3006;	// Statistical Methods I
+	STAT_3005 -> STAT_3104;
+
+	//=====================================================================
+	// Fall 2018
+	CMDA_3634 -> CMDA_4864;	// CS Foundations for CMDA
+	CS_2505 -> CS_2506;	// Intro. Comp. Org. I
+	CS_2505 -> CS_3114;
+	MATH_2534 -> CS_3114;	// Discrete Math
+	MATH_2534 -> MATH_3134;
+	STAT_3006 -> CMDA_3654;	// Statistical Methods II
+	STAT_3006 -> STAT_4214;
+	STAT_3006 -> STAT_4444;
+	STAT_3006 -> STAT_4504;
+	STAT_3006 -> STAT_4534;	
+	CS_1944	-> CS_3604;	// CS First Year Seminar
+	CS_2984;		// SS: Competitive Problem Solving I
+
+	//=====================================================================
+	// Spring 2019
+	STAT_3104 -> CMDA_4654;	// Probability and Distributions
+	STAT_3104 -> STAT_4444;
+	STAT_4705;		// Statistics for Engineers
+	MATH_3134 -> CS_4104;	// Applied Combinatorics
+	MATH_2214 -> CMDA_3605;	// Differential Equations
+	CS_2506 -> CS_3214;	// Intro. Comp. Org. II
+	CS_3114	-> CS_3304;	// Data Structures and Algorithms
+	CS_3114	-> CS_4104;
+	CS_3114	-> CS_4284;
+
+	//=====================================================================
+	// Fall 2019
+	COM_2004 -> CS_3604;	// Public Speaking
+	CS_3214 -> CS_4284;	// Systems
+	CMDA_3605 -> CMDA_3606; // Math Modeling: Methods & Tools I
+	CMDA_3605 -> CMDA_4864;
+	CMDA_3654 -> CMDA_4654;	// Intro. Data An. & Vis. 
+	ART_1104;		// Language of Visual Arts
+
+	//=====================================================================
+	// Spring 2020: Daikin Co-op
+
+	//=====================================================================
+	// Fall 2020
+	CS_3304;		// Comparative Languages
+	CS_3604 -> CS_4944;	// Professionalism in Computing
+	CS_4104;		// Data and Algorithm Analysis
+	CMDA_3606;		// Math Modeling: Methods & Tools II
+	CMDA_4654 -> CMDA_4864;	// Int. Data An. & ML 
+
+	//=====================================================================
+	// Spring 2021
+	ENGL_3814;		// Creating User Documentation
+	CS_4944;		// Senior Seminar
+	// Note: it seems that we could omit 1 statistics coure, but doing so
+	// would forfeit the statistics minor
+	STAT_4214;		// Methods of Regression Analysis
+	STAT_4504;		// Applied Multivariate Analysis
+	STAT_4534;		// Applied Time Series
+	STAT_4444;		// Applied Bayesian Statistics               
+
+	//=====================================================================
+	// Fall 2021
+	CS_4284; 		// Systems & Networking Capstone
+	CMDA_4864;		// CMDA Capstone                         
+} 
+
+// Ignore CLE stuff (failed attempt to include CLE in the chart), I changed
+// the graph so that every node should only a course.
+//=====================================================================
+//	// 2: Definition of CMDA degree
+//	CMDA_core -> CMDA_degree;
+//	CMDA_rest_elec_12c -> CMDA_degree;
+//	CMDA_cle -> CMDA_degree;
+//	
+//	// 2.1: CLE
+//	CMDA_a1 -> CMDA_cle; 
+//	CMDA_a2 -> CMDA_cle;
+//	CMDA_a3 -> CMDA_cle;
+//	CMDA_a4 -> CMDA_cle;
+//	CMDA_a5 -> CMDA_cle;
+//	CMDA_a6 -> CMDA_cle;
+//	CMDA_a7 -> CMDA_cle;
+//	
+//	// 2.1.1: Writing and Discourse
+//	ENGL_1105 -> CMDA_a1; 
+//	ENGL_1106 -> CMDA_a1;
+//	
+//	// 2.1.2: Ideas, Cultural Traditions and Values
+//	// engineering cultures (see Summer II 2017)
+//	
+//	// 2.1.3: Society and Human Behavior
+//	ECON_2005 -> CMDA_a3;
+//	HIST_1115 -> CMDA_a3;
+//	
+//	// 2.1.4: Scientific Reasoning and Discovery
+//	// chemistry (see Fall 2017)
+//	// physics-1 (see Spring 2018)
+//	
+//	// 2.1.5: Quantitative and Symbolic Reasoning
+//	MATH_1225 -> CMDA_a5;
+//	
+//	// 2.1.6: Creativity and Aesthetic Experience
+//	ENGE_2094 -> CMDA_a6;
+//	
+//	// 2.1.7: Critical Issues in a Global Context
+//	// engineering cultures (see Summer II 2017)
+//=====================================================================
+//	// 1: Definition of CS degree
+//	CS_core -> CS_degree;
+//	CS_cle -> CS_degree;
+//
+//	// 2.1: CLE
+//	CS_a1 -> CS_cle; 
+//	CS_a2 -> CS_cle; 
+//	CS_a3 -> CS_cle;
+//	CS_a4 -> CS_cle;
+//	CS_a5 -> CS_cle;
+//	CS_a6 -> CS_cle;
+//	CS_a7 -> CS_cle;
+//=====================================================================
+

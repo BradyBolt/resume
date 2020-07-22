@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+[ -f ./gc.png ] && rm gc.png
+dot -Tpng college_graph.gv -o gc.png
+eog gc.png &
