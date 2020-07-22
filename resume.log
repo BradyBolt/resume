@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2020.6.1)  8 JUN 2020 18:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2020.7.1)  16 JUL 2020 03:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -164,15 +164,15 @@ File: t1qcs.fd 2009/09/25 v1.2 font definition file for T1/qcs
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./resume.aux) )
 (\end occurred inside a group at level 1)
 
-### simple group (level 1) entered at line 74 ({)
+### simple group (level 1) entered at line 73 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 2000 strings out of 494561
- 27974 string characters out of 6177455
- 113131 words of memory out of 5000000
- 5669 multiletter control sequences out of 15000+600000
+ 2000 strings out of 494485
+ 27974 string characters out of 6175793
+ 113376 words of memory out of 5000000
+ 5678 multiletter control sequences out of 15000+600000
  13734 words of font info for 30 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
+ 59 hyphenation exceptions out of 8191
  33i,7n,32p,236b,155s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/tex-gyre/q-ec.enc} </home/che
 rub/.texlive2018/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600pk> </home/c
@@ -184,9 +184,9 @@ home/cherub/.texlive2018/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk>
 > </home/cherub/.texlive2018/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm2074.600
 pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
 sr/share/texmf/fonts/type1/public/tex-gyre/qcsr.pfb>
-Output written on resume.pdf (1 page, 80606 bytes).
+Output written on resume.pdf (1 page, 80761 bytes).
 PDF statistics:
- 192 PDF objects out of 1000 (max. 8388607)
+ 191 PDF objects out of 1000 (max. 8388607)
  39 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
