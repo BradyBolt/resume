@@ -2,7 +2,9 @@
 Latex Resume and dot graph for college courses.
 
 Install Latex stuff:
-```sudo apt-get install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra```
+```
+sudo apt-get install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
+```
 Run:
 ```
 pdflatex ./resume.tex
