@@ -1,13 +1,15 @@
 # resume
 Latex Resume and dot graph for college courses.
 
-After installing `sudo apt-get install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra`, run:
+Install Latex stuff:
+```sudo apt-get install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra```
+Run:
 ```
-pdflatex ./resume.txt
+pdflatex ./resume.tex
 ```
 Don't run:
 ```
-pdftex ./resume.txt
+pdftex ./resume.tex
 ```
 To make directed graph of college courses (install `xdot` and `eog`):
 ```
